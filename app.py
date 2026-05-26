@@ -25,9 +25,11 @@ def crear_peritaje():
 
 	if not data or 'placa' not in data:
 		return jsonify({"error": "Falta el dato de la placa"}), 400
+	
+	placa_limpia = str(data['placa']).strip().upper()
 
 	nuevo_peritaje = {
-		"placa": data['placa'],
+		"placa": placa_limpia,
 		"modelo": data.get('modelo', '2026'),
 		"fecha_registro": str(datetime.datetime.now())
 	}
