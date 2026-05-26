@@ -46,5 +46,11 @@ def get_peritajes():
 		"peritajes_guardados": peritajes_db
 	})
 
+
+@app.route('/api/inventario/repuestos', methods=['POST'])
+def agregar_repuesto_complejo():
+    data = request.get_json()
+    pass
+
 if __name__ == "__main__":
     app.run()
