@@ -46,5 +46,10 @@ def get_peritajes():
 		"peritajes_guardados": peritajes_db
 	})
 
+@app.route('/api/test')
+def test_endpoint():
+	
+    return {"mensaje": "Todo bien"}
+
 if __name__ == "__main__":
     app.run()
