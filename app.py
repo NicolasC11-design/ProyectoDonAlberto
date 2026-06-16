@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import datetime
+import os
 
 app = Flask(__name__)
 
@@ -46,5 +47,7 @@ def get_peritajes():
 		"peritajes_guardados": peritajes_db
 	})
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    # Se usa el puerto 5000 por defecto
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
